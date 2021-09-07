@@ -11,7 +11,4 @@ npm install react-three-fiber @react-three/drei react-spring @react-spring/paral
 ```
 
 
-# Installation<br>
-Install Xampp,MySQL and PHP.<br>
-
 
