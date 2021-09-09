@@ -3,13 +3,7 @@
 }
 
 .background {
-  background: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#2b2525),
-    to(#9198e5)
-  );
+  background: -webkit-gradient(linear, left top, left bottom, from(#2b2525), to(#9198e5));
   background: linear-gradient(#2b2525, #9198e5);
   position: absolute;
   top: 0;
@@ -23,9 +17,9 @@
 p {
   font-size: 1.5em;
 }
-.abs {
+
+.menu {
   position: absolute;
-  right: 50%;
-  z-index: 10;
+  z-index: 2;
 }
 /*# sourceMappingURL=style.css.map */
