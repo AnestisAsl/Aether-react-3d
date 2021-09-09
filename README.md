@@ -2,7 +2,7 @@
 
 # Description<br>
 
-Aether is a web application that uses 3d technologies and advanced animations to visualise our solar system.<br>
+Aether is a web application that uses 3d web technologies and advanced animations to visualise our solar system.<br>
 
 
 ```
