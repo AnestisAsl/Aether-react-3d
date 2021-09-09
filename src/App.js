@@ -13,9 +13,9 @@ function App() {
     return planetName;
   }
   return (
-    <div className="flexbox">
+    <>
       <div className="background" />
-      <div className="abs">
+      <div className="menu">
         <h1>welcome</h1>
         <h4>choose a planet</h4>
         <ul>
@@ -61,7 +61,7 @@ function App() {
           </p>
         </ParallaxLayer>
       </Parallax>
-    </div>
+    </>
   );
 }
 
