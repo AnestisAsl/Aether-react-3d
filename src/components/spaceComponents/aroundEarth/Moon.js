@@ -11,21 +11,17 @@ const Moon = () => {
     const { spring } = useSpring({
       spring: active,
       config: {
-        mass: 50,
+        mass: 500,
         tension: 200,
         friction: 50,
         precision: 0.0001,
-        duration: 5000,
+        duration: 8000,
       },
     });
-    // const positionZ = spring.to(
-    //   [0, 0.25, 0.5, 0.75, 1],
-    //   [1.5, 5.5, 2.5, -5, 1]
-    // );
-    // const positionX = spring.to(
-    //   [-10, 0.25, 0.5, 0.75, 1],
-    //   [3.5, 0, -5.5, -1, 3.5]
-    // );
+    const positionZ = spring.to([0, 0.25, 0.5, 0.75, 1], [-5, 6, 6, 0, -5]);
+    const positionX = spring.to([0, 0.25, 0.5, 0.75, 1], [-10, -4, 5, 10, -10]);
+    const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [4, 2, 2, 2, 4]);
+
     // const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [2, 0.5, 1.5, 2.5, 2]);
     // in case i want to rotate z-axis with react spring
     // i use useFrame hook to make a realistic comparison between the different
@@ -54,11 +50,10 @@ const Moon = () => {
     );
     return (
       <animated.mesh
-        position={[-10, 4, -5]}
         ref={mesh}
-        // position-x={positionX}
-        // position-y={positionY}
-        // position-z={positionZ}
+        position-x={positionX}
+        position-y={positionY}
+        position-z={positionZ}
         onClick={() => setActive(Number(!active))}
       >
         <sphereGeometry attach="geometry" args={[2, 20, 20]} />
