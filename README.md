@@ -1,16 +1,18 @@
 # Aether-react-3d
 
-# Description<br>
+## Description<br>
 
 Aether is a web application that uses 3d web technologies and advanced animations to visualise our solar system.<br>
 
 
-# Technologies Used<br>
+## Technologies Used<br>
 * React JS
 * react-spring
 * react-three-fiber
 * drei
 * SASS
+
+## Instalation<br>
 
 ```
 npm install react-three-fiber @react-three/drei react-spring @react-spring/parallax
