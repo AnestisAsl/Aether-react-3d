@@ -6,11 +6,11 @@ Aether is a web application that uses 3d web technologies and advanced animation
 
 
 # Technologies Used<br>
-*React JS
-*react-spring
-*react-three-fiber
-*drei
-*SASS
+* React JS
+* react-spring
+* react-three-fiber
+* drei
+* SASS
 
 ```
 npm install react-three-fiber @react-three/drei react-spring @react-spring/parallax
