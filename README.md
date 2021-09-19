@@ -23,7 +23,8 @@ npm install react-three-fiber @react-three/drei react-spring @react-spring/paral
 
 # Actions and Usage<br>
 Find a photo that you think its suitable for a galaxy. Name it 'galaxy'.jpg and drop it at the styles folder.
-
+You must also find some photos for planet textures and put them into public/textures folder.<br>
+This folder is now empty.
 
 
 
