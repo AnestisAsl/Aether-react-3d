@@ -3,6 +3,7 @@ import { useTexture } from "@react-three/drei";
 import { animated } from "@react-spring/three";
 import { useFrame } from "react-three-fiber";
 import AroundEarth from "./spaceComponents/AroundEarth";
+import AroundNeptune from "./spaceComponents/AroundNeptune";
 
 const Planet = (props) => {
   const textureApplied = useTexture(props.texture);
@@ -31,7 +32,7 @@ const Planet = (props) => {
             {props.name == "Earth" ? (
               <AroundEarth />
             ) : props.name == "Neptune" ? (
-              <></>
+              <AroundNeptune />
             ) : props.name == "Sun" ? (
               <></>
             ) : props.name == "Jupiter" ? (

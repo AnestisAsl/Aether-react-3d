@@ -6,10 +6,13 @@ import { useFrame } from "react-three-fiber";
 const Moon = () => {
   function Moon() {
     const moonTexture = useTexture("../textures/moon.jpg");
-    const [active, setActive] = useState(0);
-    const moonRotationSpeed = Math.log10(3683);
+    const [trigger, setTrigger] = useState(0);
+    const moonOrbitalSpeed = Math.log10(1022); //km/s
+    const moonRotationSpeed = Math.log10(3683); //km/h
+    const moonRadius = 1737.4; //km
+
     const { spring } = useSpring({
-      spring: active,
+      spring: trigger,
       config: {
         mass: 500,
         tension: 200,
@@ -54,7 +57,7 @@ const Moon = () => {
         position-x={positionX}
         position-y={positionY}
         position-z={positionZ}
-        onClick={() => setActive(Number(!active))}
+        onClick={() => setTrigger(Number(!trigger))}
       >
         <sphereGeometry attach="geometry" args={[2, 20, 20]} />
         <animated.meshStandardMaterial attach="material" map={moonTexture} />

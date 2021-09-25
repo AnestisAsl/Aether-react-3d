@@ -7,7 +7,7 @@ const SpaceJunk = () => {
   function SpaceJunk() {
     const metalTexture = useTexture("../textures/metal.jpg");
 
-    const [active, setActive] = useState(0);
+    const [trigger, setTrigger] = useState(0);
     // const points = [];
     // for (let i = 0; i < 10; i++) {
     //   points.push(
@@ -15,7 +15,7 @@ const SpaceJunk = () => {
     //   );
     // }
     const { spring } = useSpring({
-      spring: active,
+      spring: trigger,
       config: {
         mass: 50,
         tension: 200,
@@ -56,14 +56,14 @@ const SpaceJunk = () => {
       >
         <animated.mesh
           rotation-z={rotationZ}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <ringGeometry attach="geometry" args={[0.5, 0.8, 8]} />
           <animated.meshStandardMaterial attach="material" map={metalTexture} />
         </animated.mesh>
         <animated.mesh
           rotation-x={Math.PI / 2}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <cylinderGeometry
             attach="geometry"
@@ -74,7 +74,7 @@ const SpaceJunk = () => {
         <animated.mesh
           rotation-x={Math.PI / 2}
           position-z={1.48}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <sphereGeometry
             attach="geometry"
@@ -85,7 +85,7 @@ const SpaceJunk = () => {
         <animated.mesh
           rotation-y={Math.PI / 2}
           position-y={1.4}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <boxGeometry attach="geometry" args={[0.2, 1, 1]} />
           <animated.meshStandardMaterial
@@ -97,7 +97,7 @@ const SpaceJunk = () => {
         <animated.mesh
           rotation-y={Math.PI / 2}
           position-y={-1.4}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <boxGeometry attach="geometry" args={[0.2, 1, 1]} />
           <animated.meshStandardMaterial
@@ -109,7 +109,7 @@ const SpaceJunk = () => {
         <animated.mesh
           rotation-x={Math.PI / 2}
           position-z={-1}
-          onClick={() => setActive(Number(!active))}
+          onClick={() => setTrigger(Number(!trigger))}
         >
           <coneGeometry attach="geometry" args={[0.5, 0.5, 25]} />
           <animated.meshStandardMaterial attach="material" map={metalTexture} />
