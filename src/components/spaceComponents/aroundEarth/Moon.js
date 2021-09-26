@@ -10,7 +10,9 @@ const Moon = () => {
     const moonOrbitalSpeed = Math.log10(1022); //km/s
     const moonRotationSpeed = Math.log10(3683); //km/h
     const moonRadius = 1737.4; //km
-
+    const radiusFraction = 3.6;
+    const distanceFromEarth = 384400; //km
+    //the first way to make this animation the second one is at Triton.js component
     const { spring } = useSpring({
       spring: trigger,
       config: {
@@ -23,7 +25,7 @@ const Moon = () => {
     });
     const positionZ = spring.to([0, 0.25, 0.5, 0.75, 1], [-5, 6, 6, 0, -5]);
     const positionX = spring.to([0, 0.25, 0.5, 0.75, 1], [-10, -4, 5, 10, -10]);
-    const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [4, 2, 2, 2, 4]);
+    const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [4, 1, 1, 2, 4]);
 
     // const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [2, 0.5, 1.5, 2.5, 2]);
     // in case i want to rotate z-axis with react spring
@@ -59,6 +61,9 @@ const Moon = () => {
         position-z={positionZ}
         onClick={() => setTrigger(Number(!trigger))}
       >
+        {/* The planetCard components have radius=50(for displaying purposes),
+        so for a more realistic approach the moon should have radius of 0.072
+        because radiusFraction=earth radius/moon radius=3.6. */}
         <sphereGeometry attach="geometry" args={[2, 20, 20]} />
         <animated.meshStandardMaterial attach="material" map={moonTexture} />
       </animated.mesh>
