@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import JunkSpace from "./aroundEarth/SpaceJunk";
-import Moon from "./aroundEarth/Moon";
+import Selene from "./aroundEarth/Selene";
+import SpaceJunk from "./aroundEarth/SpaceJunk";
 
 const AroundEarth = () => {
   return (
     <group>
-      <JunkSpace />
-      <Moon />
+      <SpaceJunk />
+      <Selene />
     </group>
   );
 };

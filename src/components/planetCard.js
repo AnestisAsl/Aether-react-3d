@@ -123,7 +123,7 @@ const PlanetCard = (props) => {
           texture={texture}
           name={props.name}
           args={[3, 50, 50]}
-          // speed / 100 for a smoother display on the screen
+          // *  speed / 100 for a smoother display on the screen
           speed={rotationSpeed / 100}
           shadowColor={shadowColor}
         />

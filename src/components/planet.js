@@ -7,11 +7,11 @@ import AroundNeptune from "./spaceComponents/AroundNeptune";
 
 const Planet = (props) => {
   const textureApplied = useTexture(props.texture);
-  console.table(props);
+  // console.table(props);
 
   const AnimatedPlanet = ({ position, args, speed }) => {
     const [specialEffect, setSpecialEffect] = useState(false);
-    console.log(specialEffect);
+    // console.log(specialEffect);
     const mesh = useRef();
     useFrame(
       () => (mesh.current.rotation.y = mesh.current.rotation.y += speed)

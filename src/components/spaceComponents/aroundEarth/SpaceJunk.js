@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTexture } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
+import { useFrame } from "react-three-fiber";
 
 // import { Vector2 } from "three";
 const SpaceJunk = () => {
   function SpaceJunk() {
     const metalTexture = useTexture("../textures/metal.jpg");
-
+    const spaceJunkRotationSpeed = Math.log10(8); //km/s
     const [trigger, setTrigger] = useState(0);
     // const points = [];
     // for (let i = 0; i < 10; i++) {
@@ -29,11 +30,8 @@ const SpaceJunk = () => {
       [0, 0.25, 0.5, 0.75, 1],
       [1.5, 5.5, 2.5, -5, 1]
     );
-    const positionX = spring.to(
-      [0, 0.25, 0.5, 0.75, 1],
-      [3.5, 0, -5.5, -1, 3.5]
-    );
-    const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [2, 0.5, 1.5, 2.5, 2]);
+    const positionX = spring.to([0, 0.25, 0.5, 0.75, 1], [4, 0, -5.5, -1, 4]);
+    const positionY = spring.to([0, 0.25, 0.5, 0.75, 1], [0, 0.5, 1.5, 2.5, 0]);
     //to rotate all the shapes as a group(satelite)
     const groupRotationY = spring.to(
       [0, 0.25, 0.5, 0.75, 1],
@@ -45,10 +43,20 @@ const SpaceJunk = () => {
         -Math.PI / 0.25,
       ]
     );
+    const mesh = useRef();
+    useFrame(() => {
+      mesh.current.rotation.y = mesh.current.rotation.y +=
+        spaceJunkRotationSpeed / 100;
+      mesh.current.rotation.x = mesh.current.rotation.x +=
+        spaceJunkRotationSpeed / 100;
+      mesh.current.rotation.z = mesh.current.rotation.z +=
+        spaceJunkRotationSpeed / 100;
+    });
 
     return (
       // this group forms a satelite
       <animated.group
+        ref={mesh}
         rotation-y={groupRotationY}
         position-x={positionX}
         position-y={positionY}

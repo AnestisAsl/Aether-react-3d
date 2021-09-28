@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTexture } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
+import { useFrame } from "react-three-fiber";
 
 const Triton = () => {
+  // TODO: USE MOON COMPONENT
   const [trigger, setTrigger] = useState(0);
   const tritonRotationSpeed = Math.log10(3683); //km/h
   const tritonOrbitalSpeed = Math.log10(4.39); //km/s
@@ -36,9 +38,18 @@ const Triton = () => {
   const { positionY } = useSpring({
     positionY: positionSpring.to([0, 0.25, 0.5, 0.75, 1], [4, 1, 1, 2, 4]),
   });
+
+  const mesh = useRef();
+  useFrame(
+    () =>
+      (mesh.current.rotation.y = mesh.current.rotation.y +=
+        tritonRotationSpeed / 100)
+  );
+
   function Triton() {
     return (
       <animated.mesh
+        ref={mesh}
         position-x={positionX}
         position-y={positionY}
         position-z={positionZ}
