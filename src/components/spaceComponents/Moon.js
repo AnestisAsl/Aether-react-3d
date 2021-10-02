@@ -13,6 +13,12 @@ const Moon = (props) => {
   const moonRadius = props.radius; //km
   const radiusFraction = props.fraction;
   const distanceFromPlanet = props.distanceFromPlanet; //km
+  // * For different animation  argument between the components
+  const positionInCanvasX = props.positionInCanvasX;
+  const positionInCanvasY = props.positionInCanvasY;
+  const positionInCanvasZ = props.positionInCanvasZ;
+
+  const canvasRadius = props.canvasRadius; // * for displaying purposes
   // * the first way to make the orbital animation
   //   const { orbitSpring } = useSpring({
   //     orbitSpring: trigger,
@@ -46,16 +52,23 @@ const Moon = (props) => {
     },
   });
   const { positionX } = useSpring({
-    positionX: positionSpring.to([0, 0.25, 0.5, 0.75, 1], [-10, -4, 5, 8, -10]),
+    positionX: positionSpring.to(
+      [0, 0.25, 0.5, 0.75, 1],
+      props.positionInCanvasX
+    ),
+  });
+  const { positionY } = useSpring({
+    positionY: positionSpring.to(
+      [0, 0.25, 0.5, 0.75, 1],
+      props.positionInCanvasY
+    ),
   });
   const { positionZ } = useSpring({
     positionZ: positionSpring.to(
       [0, 0.25, 0.5, 0.75, 1],
-      [-5, 4.5, 4.5, 0, -5]
+
+      props.positionInCanvasZ
     ),
-  });
-  const { positionY } = useSpring({
-    positionY: positionSpring.to([0, 0.25, 0.5, 0.75, 1], [4, 1, 1, 2, 4]),
   });
 
   // *  in case i want to rotate z-axis with react spring
@@ -96,7 +109,7 @@ const Moon = (props) => {
         // *  so for a more realistic approach the moon should have radius of 0.072
         // *  because radiusFraction=earth radius/moon radius=3.6. }
       }
-      <sphereGeometry attach="geometry" args={[2, 20, 20]} />
+      <sphereGeometry attach="geometry" args={[props.canvasRadius, 20, 20]} />
       <animated.meshStandardMaterial attach="material" map={moonTexture} />
     </animated.mesh>
   );

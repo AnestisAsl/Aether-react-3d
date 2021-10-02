@@ -4,6 +4,7 @@ import { animated } from "@react-spring/three";
 import { useFrame } from "react-three-fiber";
 import AroundEarth from "./spaceComponents/AroundEarth";
 import AroundNeptune from "./spaceComponents/AroundNeptune";
+import AroundJupiter from "./spaceComponents/AroundJupiter";
 
 const Planet = (props) => {
   const textureApplied = useTexture(props.texture);
@@ -36,7 +37,7 @@ const Planet = (props) => {
             ) : props.name == "Sun" ? (
               <></>
             ) : props.name == "Jupiter" ? (
-              <></>
+              <AroundJupiter />
             ) : props.name == "Mars" ? (
               <></>
             ) : props.name == "Mercury" ? (
