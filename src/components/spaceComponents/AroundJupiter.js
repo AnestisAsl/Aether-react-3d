@@ -1,8 +1,8 @@
 import React from "react";
-import GalileanMoons from "./aroundJupiter/GalileanMoons";
+import JovianSystem from "./aroundJupiter/JovianSystem";
 
 const AroundJupiter = () => {
-  return <GalileanMoons />;
+  return <JovianSystem />;
 };
 
 export default AroundJupiter;
