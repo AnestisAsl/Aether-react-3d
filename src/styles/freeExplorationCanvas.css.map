@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACrB,gBAAgB,EAAE,mBAAmB;EACrC,eAAe,EAAE,KAAK;EACtB,KAAK,EAAE,cAAc;EACrB,MAAM,EAAE,eAAe;CACxB",
+    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EAGrB,KAAK,EAAE,cAAc;EACrB,MAAM,EAAE,eAAe;CACxB",
     "sources": [
         "freeExplorationCanvas.scss"
     ],
