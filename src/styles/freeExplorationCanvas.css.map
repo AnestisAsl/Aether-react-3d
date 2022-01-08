@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EAGrB,KAAK,EAAE,cAAc;EACrB,MAAM,EAAE,eAAe;CACxB",
-    "sources": [
-        "freeExplorationCanvas.scss"
-    ],
-    "names": [],
-    "file": "freeExplorationCanvas.css"
-}
