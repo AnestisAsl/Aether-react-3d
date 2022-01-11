@@ -5,7 +5,7 @@
 Aether is a web application that uses 3D web technologies and advanced animations to visualise our solar system.It's backend
 consist of a postgreSQL database and a nest-js API.React and some other libraries take care of the frontend.
 
-# Frontend<br>
+## Frontend<br>
 ## Technologies Used<br>
 * React JS
 * react-spring
