@@ -10,13 +10,14 @@ consist of a postgreSQL database and a nest-js API.React and some other librarie
 * React JS
 * react-spring
 * react-three-fiber
+* react-router V6
 * drei
 * SASS
 
 ## Instalation<br>
 
 ```
-npm install react-three-fiber @react-three/drei react-spring @react-spring/parallax react-icons
+npm install react-three-fiber @react-three/drei react-spring @react-spring/parallax react-icons react-router-dom@6
 
 ```
 
