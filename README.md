@@ -29,6 +29,7 @@ npm install react-three-fiber @react-three/drei react-spring @react-spring/paral
 * PostgreSQL
 
 ## Instalation<br>
+The NestJS backend was created using the NestJS cli.For the postgreSQL interaction i used typeORM.
 
 ```
 npm install --save @nestjs/typeorm typeorm pg
