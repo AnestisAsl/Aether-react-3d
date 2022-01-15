@@ -8,7 +8,7 @@ const Callisto = () => {
       positionInCanvas={[-1, 2, -distanceFromPlanetInCanvas]}
       texture={"../textures/moon.jpg"}
       name={"Callisto"}
-      orbitalSpeed={Math.log10(8204)}
+      orbitalSpeed={Math.log10(8.204)}
       rotationalSpeed={Math.log10(8784000)}
       radius={2410.3}
       canvasRadius={1.6}

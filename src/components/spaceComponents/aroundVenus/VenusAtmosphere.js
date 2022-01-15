@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-import { useTexture } from "@react-three/drei";
-import { useSpring, animated } from "@react-spring/three";
-import { useFrame } from "react-three-fiber";
+import React from "react";
 
 const VenusArmosphere = () => {
   return (

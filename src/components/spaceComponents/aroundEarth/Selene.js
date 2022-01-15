@@ -9,7 +9,7 @@ const Selene = () => {
       positionInCanvasZ={[-5, 6, 6, 0, -5]}
       texture={"../textures/moon.jpg"}
       name={"Selene"}
-      orbitalSpeed={Math.log10(1022)}
+      orbitalSpeed={Math.log10(1.022)}
       rotationalSpeed={Math.log10(3683)}
       radius={1737.4}
       canvasRadius={2}

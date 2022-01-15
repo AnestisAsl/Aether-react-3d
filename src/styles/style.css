@@ -59,6 +59,30 @@ p {
           justify-content: center;
 }
 
+.header {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -ms-grid-columns: 25% 50% 25%;
+      grid-template-columns: 25% 50% 25%;
+  width: 100%;
+}
+
+.headerButtonContainer {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 3;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.name {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
 h1,
 h4 {
   font-family: "Montserrat", sans-serif;
@@ -103,5 +127,10 @@ button:hover:after {
 
 button:hover {
   color: #e9c46a;
+}
+
+.planetCard {
+  width: 100% !important;
+  height: 80vh !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -46,7 +46,21 @@ p {
   align-items: center;
   justify-content: center;
 }
-
+.header {
+  display: inline-grid;
+  grid-template-columns: 25% 50% 25%;
+  width: 100%;
+}
+.headerButtonContainer {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  justify-self: end;
+}
+.name {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  justify-self: center;
+}
 h1,
 h4 {
   font-family: $fontFamily;
@@ -80,4 +94,8 @@ button {
   &:hover {
     color: $secondaryColor;
   }
+}
+.planetCard {
+  width: 100% !important;
+  height: 80vh !important;
 }

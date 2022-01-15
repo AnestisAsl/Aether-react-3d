@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Selene from "./aroundEarth/Selene";
 import SpaceJunk from "./aroundEarth/SpaceJunk";
 

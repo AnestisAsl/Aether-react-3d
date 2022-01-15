@@ -14,11 +14,13 @@ const JovianSystem = () => {
   const { rotationalSpring } = useSpring({
     rotationalSpring: trigger,
     config: {
-      mass: 500,
+      mass: 50,
       tension: 200,
       friction: 50,
       precision: 0.0001,
-      duration: 100000,
+      // * since i animate the four Galilean moons as a group around the Y axis i cant use
+      // * my formula for orbital speed.This is an experiential value.
+      duration: 109000,
     },
   });
   const { rotateY } = useSpring({

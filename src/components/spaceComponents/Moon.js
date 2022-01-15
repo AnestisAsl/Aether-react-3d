@@ -38,6 +38,7 @@ const Moon = (props) => {
   //   const positionY = orbitSpring.to([0, 0.25, 0.5, 0.75, 1], [4, 1, 1, 2, 4]);
 
   // * the second way to make the orbital animation
+  console.log(moonOrbitalSpeed);
   const { positionSpring } = useSpring({
     // to: { positionSpring: 1 },
     // from: { positionSpring: 0 },
@@ -48,7 +49,7 @@ const Moon = (props) => {
       tension: 200,
       friction: 50,
       precision: 0.0001,
-      duration: 5000,
+      duration: 10000 / Math.pow(moonOrbitalSpeed + 1, 0.5),
     },
   });
   const { positionX } = useSpring({

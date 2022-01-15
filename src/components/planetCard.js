@@ -1,10 +1,9 @@
 import React, { Suspense, useState, useEffect } from "react";
 import { Canvas } from "react-three-fiber";
-import { softShadows, Text, Stats, OrbitControls } from "@react-three/drei";
+import { softShadows, Text } from "@react-three/drei";
 import { useSpring, animated } from "@react-spring/three";
-import "../styles/planetCard.css";
-import "../styles/fonts.css";
-
+import "../styles/style.css";
+import Loader from "../components/loader";
 import Planet from "./planet";
 
 softShadows();
@@ -36,7 +35,7 @@ const PlanetCard = (props) => {
           letterSpacing={0.02}
         >
           Planet:{props.name}. {/* to reverse the log 10 we did before  */}
-          Rotational Speed:{Math.pow(10, rotationSpeed).toFixed(2)}km/h. Orbit
+          Rotational Speed:{Math.pow(10, rotationSpeed).toFixed(2)}km/h. Orbital
           Speed:{orbitSpeed} km/s. Age:{age} billion years old.
         </Text>
       </animated.mesh>
@@ -113,11 +112,11 @@ const PlanetCard = (props) => {
       shadowMap
       camera={{ position: [0, 2, 10], fov: 60 }}
       className="planetCard"
+      color="black"
     >
-      <ambientLight intensity={0.3} />
-      <directionalLight castShadow position={[0, 10, 0]} intensity={1.5} />
-
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
+        <ambientLight intensity={0.3} />
+        <directionalLight castShadow position={[0, 10, 0]} intensity={1.5} />
         <Planet
           position={[-1, 2, 0]}
           texture={texture}
@@ -127,10 +126,10 @@ const PlanetCard = (props) => {
           speed={rotationSpeed / 100}
           shadowColor={shadowColor}
         />
+        <AnimatedText />
+        {/* <Stats /> */}
+        {/* <OrbitControls /> */}
       </Suspense>
-      <AnimatedText />
-      {/* <Stats /> */}
-      {/* <OrbitControls /> */}
     </Canvas>
   );
 };

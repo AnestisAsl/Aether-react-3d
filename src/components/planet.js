@@ -1,18 +1,23 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, Suspense } from "react";
 import { useTexture } from "@react-three/drei";
 import { animated } from "@react-spring/three";
 import { useFrame } from "react-three-fiber";
 import AroundEarth from "./spaceComponents/AroundEarth";
 import AroundNeptune from "./spaceComponents/AroundNeptune";
 import AroundJupiter from "./spaceComponents/AroundJupiter";
+import AroundMars from "./spaceComponents/AroundMars";
+import AroundSaturn from "./spaceComponents/AroundSaturn";
+import AroundUranus from "./spaceComponents/AroundUranus";
+import AroundMercury from "./spaceComponents/AroundMercury";
+import AroundVenus from "./spaceComponents/AroundVenus";
+
+import Loader from "../components/loader";
 
 const Planet = (props) => {
   const textureApplied = useTexture(props.texture);
-  // console.table(props);
 
   const AnimatedPlanet = ({ position, args, speed }) => {
     const [specialEffect, setSpecialEffect] = useState(false);
-    // console.log(specialEffect);
     const mesh = useRef();
     useFrame(
       () => (mesh.current.rotation.y = mesh.current.rotation.y += speed)
@@ -39,15 +44,15 @@ const Planet = (props) => {
             ) : props.name == "Jupiter" ? (
               <AroundJupiter />
             ) : props.name == "Mars" ? (
-              <></>
+              <AroundMars />
             ) : props.name == "Mercury" ? (
-              <></>
+              <AroundMercury />
             ) : props.name == "Saturn" ? (
-              <></>
+              <AroundSaturn />
             ) : props.name == "Uranus" ? (
-              <></>
+              <AroundUranus />
             ) : props.name == "Venus" ? (
-              <></>
+              <AroundVenus />
             ) : (
               <></>
             )}
@@ -58,6 +63,7 @@ const Planet = (props) => {
       </group>
     );
   };
+
   return (
     <group>
       {/* plane field for shadows */}
@@ -73,11 +79,13 @@ const Planet = (props) => {
           color={props.shadowColor}
         />
       </mesh>
-      <AnimatedPlanet
-        position={props.position}
-        args={props.args}
-        speed={props.speed}
-      />
+      <Suspense fallback={<Loader />}>
+        <AnimatedPlanet
+          position={props.position}
+          args={props.args}
+          speed={props.speed}
+        />
+      </Suspense>
     </group>
   );
 };

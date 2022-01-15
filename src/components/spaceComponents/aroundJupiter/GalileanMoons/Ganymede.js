@@ -8,7 +8,7 @@ const Ganymede = () => {
       positionInCanvas={[distanceFromPlanetInCanvas, 2, 0]}
       texture={"../textures/moon.jpg"}
       name={"Ganymede"}
-      orbitalSpeed={Math.log10(10880)}
+      orbitalSpeed={Math.log10(10.88)}
       rotationalSpeed={Math.log10(9867600)}
       radius={2634.1}
       canvasRadius={1.8}

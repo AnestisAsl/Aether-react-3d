@@ -8,7 +8,7 @@ const Europa = () => {
       positionInCanvas={[-1, 2, distanceFromPlanetInCanvas]}
       texture={"../textures/moon.jpg"}
       name={"Europa"}
-      orbitalSpeed={Math.log10(13743.36)}
+      orbitalSpeed={Math.log10(13.743)}
       rotationalSpeed={Math.log10(7290000)}
       radius={1560.8}
       canvasRadius={1}
