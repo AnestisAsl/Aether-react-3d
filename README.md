@@ -41,7 +41,7 @@ npm install --save @nestjs/typeorm typeorm pg
 
 ### Photos management
 * Create a folder and name it **textures** in the **public** directory.<br>
-* Find some photos for planet and moon textures and put them into public/textures folder, you just created.<br>
+* Find some photos that are suitable for planet and moon textures and put them into public/textures folder, you just created.<br>
 
 
 
