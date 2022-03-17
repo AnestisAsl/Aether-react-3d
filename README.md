@@ -25,6 +25,9 @@ npm install react-three-fiber @react-three/drei react-spring @react-spring/paral
 
 
 ## Backend<br>
+
+A simple NestJS API that delivers data from a postgreSQL database to the ReactJS frontend.
+
 ## Technologies Used<br>
 * Nest JS
 * TypeORM
