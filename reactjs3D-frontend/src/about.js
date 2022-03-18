@@ -26,7 +26,7 @@ const About = () => {
           <span className="infosSpan"> PostgresSQL Database</span> connected
           with a <br />
           <span className="infosSpan">NestJS</span> API. <br />
-          <a href="https://github.com/anestisaslanidis1997/Aether-react-3d">
+          <a href="https://github.com/AnestisAsl/Aether-react-3d">
             {" "}
             For more informations visit my Github repository.
           </a>
