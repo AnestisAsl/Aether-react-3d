@@ -18,7 +18,7 @@ consist of a postgreSQL database and a NestJS API. ReactJS and some other librar
 * SASS
 * Recharts
 
-## Instalation<br>
+### Instalation<br>
 
 ```
 npm install react-three-fiber @react-three/drei react-spring @react-spring/parallax react-icons react-router-dom@6 axios recharts
@@ -34,7 +34,7 @@ A simple NestJS API that delivers data from a postgreSQL database to the ReactJS
 * TypeORM
 * PostgreSQL
 
-## Instalation<br>
+### Instalation<br>
 The NestJS backend was created using the NestJS cli. For the PostgreSQL interaction i used typeORM.
 
 ```
@@ -43,7 +43,7 @@ npm install --save @nestjs/typeorm typeorm pg
 ```
 
 
-# Actions and Usage<br>
+## Actions and Usage<br>
 
 ### Photos management
 * Create a folder and name it **textures** in the **public** directory.<br>
